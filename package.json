@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "netlify dev"
   },
   "dependencies": {
     "axios": "^1.11.0",
