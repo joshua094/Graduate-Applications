@@ -1,12 +1,14 @@
 {
+  "name": "graduate-applications",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
   "scripts": {
     "start": "nodemon server.js"
   },
   "dependencies": {
-    "@dataconnect/generated": "file:src/dataconnect-generated",
     "axios": "^1.11.0",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "serverless-http": "^4.0.0"
   },
