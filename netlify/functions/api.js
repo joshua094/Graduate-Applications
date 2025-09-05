@@ -3,6 +3,7 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const serverless = require('serverless-http');
+require('dotenv').config(); // Explicitly load .env for local development
 
 const app = express();
 
