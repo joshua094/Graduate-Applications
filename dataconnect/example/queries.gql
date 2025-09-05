@@ -1,0 +1,44 @@
+mutation InsertApplication @auth(level: USER) {
+  application_insert(data: {
+    userId_expr: "auth.uid",
+    status: "in progress"
+    createdAt_expr: "request.time"
+    updatedAt_expr: "request.time"
+  })
+}
+
+query GetApplicationsForUser @auth(level: USER) {
+  applications(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    program {
+      name
+      university {
+        name
+      }
+    }
+    status
+    createdAt
+    updatedAt
+  }
+}
+
+mutation UpdateApplicationStatus($id: UUID!, $status: String!) @auth(level: USER) {
+  application_update(
+    id: $id,
+    data: {
+      status: $status,
+      updatedAt_expr: "request.time"
+    }
+  )
+}
+
+query GetUniversityByName($name: String!) @auth(level: PUBLIC) {
+  universities(where: {name: {eq: $name}}) {
+    id
+    name
+    city
+    state
+    country
+    website
+  }
+}
